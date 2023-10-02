@@ -1,0 +1,304 @@
+:root {
+    font-family: roboto;
+}
+
+body {
+    background-color: #141414;
+    scroll-behavior: smooth;
+    margin: 2rem 3rem;
+}
+
+h1,
+h2 {
+    color: white;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Spinner */
+
+.loader {
+    display: flex;
+    justify-self: center;
+    margin: 10rem auto;
+    border: 3px solid #f3f3f3;
+    /* Light grey */
+    border-top: 3px solid #3498db;
+    /* Blue */
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* NavBar */
+
+nav {
+    display: flex;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    width: -webkit-fill-available;
+    background-color: #141414;
+    padding-right: 2rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+}
+
+.link {
+    color: white;
+    text-decoration: none;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    gap: 1.3rem;
+    list-style: none;
+}
+
+.header-search-col {
+    display: flex;
+    flex-direction: row;
+    width: 52;
+    height: 3.75rem;
+    padding-left: 0px;
+    align-items: center;
+    gap: 2rem;
+    flex-shrink: 0;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.search-container-mobile {
+    display: none;
+}
+
+.search-button {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 7px;
+    cursor: pointer;
+}
+
+.search-button svg {
+    width: 20px;
+    height: 20px;
+}
+
+.search {
+    position: relative;
+    border-radius: 1.1875rem;
+    border: 2px solid #C5CCD3;
+    background: #FFF;
+    display: flex;
+    width: 16.6875rem;
+    padding: 0.5rem 1rem;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    flex-shrink: 0;
+    transition: 300ms all ease;
+}
+
+.search::placeholder {
+    color: #8F959A;
+}
+
+.search:focus {
+    width: 30rem;
+    border: 2px solid #C5CCD3;
+    outline: none;
+}
+
+.search-button svg {
+    height: 24px;
+    width: 24px;
+}
+
+.seeMore {
+    display: flex;
+    flex-direction: row;
+    justify-self: center;
+    background-color: #141414;
+    color: white;
+    border: 1px solid white;
+    padding: 0.5rem 2rem;
+    margin: 2rem auto;
+    cursor: pointer;
+    transition: 300ms all ease;
+}
+
+.seeMore:hover {
+    transform: scale(1.2);
+}
+
+
+/* section container */
+
+.sectionContainer {}
+
+
+/* Popular list */
+.movieContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,
+            minmax(18%,
+                1fr));
+    gap: 20px;
+    width: auto;
+}
+
+
+.movieItem {
+    max-width: 100%;
+    height: auto;
+    transition: 400ms all ease;
+    border-radius: 10px;
+}
+
+.movieItem:hover {
+    transform: scale(1.1);
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+.movieItem:hover .movieInformation {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    position: absolute;
+    margin-top: -3.5rem;
+    margin-left: 0.2rem;
+}
+
+.movieItem:hover * {
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.imgItem {
+    width: 100%;
+    height: 150.250px;
+}
+
+
+.movieInformation {
+    display: none;
+    transition: 300ms all ease;
+}
+
+.movieRate {
+    border-radius: 10px;
+    min-width: 30px;
+    max-height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+
+}
+
+.green {
+    background-color: #46d369;
+}
+
+.yellow {
+    background-color: rgb(233, 233, 92);
+}
+
+.red {
+    background-color: rgb(241, 84, 84);
+}
+
+.movieName {
+    color: white;
+    text-shadow: 1px 1px 1px black;
+
+    font-size: 20px;
+}
+
+/* On theatre */
+
+.onTheatreContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 1.5rem;
+    overflow: scroll;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+
+.onTheatreImg {
+    border-radius: 10px;
+    width: 45rem;
+    height: 55vh;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    transition: 400ms all ease;
+}
+
+.onTheatreImg:hover {
+    cursor: pointer;
+}
+
+.onTheatreTitle {
+    position: relative;
+    margin-top: -65px;
+    margin-left: 0.5rem;
+    bottom: 0;
+    left: 0;
+    color: #e5e5e5;
+    font-size: 50px;
+    text-shadow: 2px 2px 4px black;
+}
+
+/* Footer */
+
+.footerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    margin-top: 3rem;
+}
+
+.footerContainer a {
+    color: white;
+    font-size: 20px;
+    transition: 400ms all ease;
+}
+
+.footerContainer a:hover {
+    transform: scale(1.3);
+}
