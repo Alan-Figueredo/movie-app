@@ -1,6 +1,6 @@
 "use client"
-import Link from "next/link";
 import { useEffect, useState } from "react";
+import Slider from "./Slider";
 
 const OnTheatre = (props) => {
     const options = props.options
@@ -14,8 +14,8 @@ const OnTheatre = (props) => {
             .then(setIsLoading(false))
             .then(response => setDataMovie(response.results))
             .catch(err => console.error(err));
-    }, [dataMovie])
-    
+    }, [])
+
     if (isLoading) {
         return (
             <div className="loader"></div>
@@ -24,18 +24,7 @@ const OnTheatre = (props) => {
     return (
         <div>
             <h2>Now on cinemas</h2>
-            <div className="onTheatreContainer">
-                {dataMovie && dataMovie.map((movie) => {
-                    return (
-                        <Link href={`/movie/${movie.id}`} key={movie.id}>
-                            <img className="onTheatreImg" src={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`} alt={`backdrop of ${movie.original_title}`} />
-                            <div className="onTheatreTitle">
-                                {movie.original_title}
-                            </div>
-                        </Link>
-                    )
-                })}
-            </div>
+            <Slider data={dataMovie} />
         </div>
     )
 }

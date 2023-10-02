@@ -33,10 +33,14 @@ export default async function TvSeries({ params }) {
     const credits = await fetchCredits(id)
 
     return (
-        <div style={{marginTop:"100px"}}>
-            <img className="imagenBanner" src={`https://image.tmdb.org/t/p/w500/${item?.backdrop_path}`} alt={`${item?.title} backdrop`} />
+        <div style={{ marginTop: "100px" }}>
+            <div style={{ display: "flex", flexWrap:"wrap" }}>
+                <InfoItem item={item && item} />
+                <div className="container-image">
+                    <img className="imagenBanner" src={`https://image.tmdb.org/t/p/w500/${item?.backdrop_path}`} alt={`${item?.title} backdrop`} />
+                </div>
+            </div>
             <div>
-                <InfoItem  item={item && item} />
                 <h2>Similar</h2>
                 <SimilarMovies type={type} similar={similar && similar} />
                 <Credits credits={credits && credits} />

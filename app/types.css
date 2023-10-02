@@ -9,14 +9,14 @@ p {
     position: relative;
     width: 100%;
     max-width: 100%;
-    height: 80vh;
-    /* Asegura que la imagen no se desborde */
+    height: auto;
 }
 
 .infoItem {
-    margin-left: 2rem;
-    position: absolute;
-    margin-top: -26.5rem;
+    position: relative;
+    align-self: self-end;
+    margin-bottom: 10.5rem;
+    bottom: 0;
 }
 
 .infoItem h2,
@@ -24,15 +24,25 @@ p {
     text-shadow: 1px 1px 2px black;
 }
 
-.imagenBanner::after {
+.container-image {
+    position: relative;
+    width: 100%;
+}
+
+.container-image img {
+    width: 100%;
+}
+
+.container-image::after {
     content: "";
+    width: 100%;
+    /* El height controla el alto del degradado */
+    height: auto;
     position: absolute;
+    top: 0;
     bottom: 0;
     left: 0;
-    width: 100%;
-    height: 20%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
-    pointer-events: none;
+    background-image: linear-gradient(to right, #141414, transparent);
 }
 
 .title {
@@ -57,12 +67,13 @@ p {
 
 .similarItem {
     flex-grow: 1;
-    flex-basis: 200;
+    flex-basis: 10%;
 }
 
 .similarPoster {
     height: 35vh;
-    width: 10.125rem;
+    width: auto;
+    max-width: 206.5px;
     transition: 400ms all ease;
 }
 
@@ -72,8 +83,11 @@ p {
 }
 
 .description {
-    width: 75%;
+    position: absolute;
+    width: 140vh;
+    z-index: 99;
     font-size: 23px;
+    margin-bottom: 5rem;
 }
 
 .creditsContainer {

@@ -57,7 +57,7 @@ nav {
     z-index: 999;
     width: -webkit-fill-available;
     background-color: #141414;
-    padding-right: 2rem;
+    padding-right: 3rem;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -161,6 +161,107 @@ ul {
 }
 
 
+/* Slider */
+
+#slider ul,
+li {
+    list-style: none;
+    white-space: nowrap;
+    padding: 0;
+}
+
+#slider li {
+    display: inline;
+}
+
+#slider img {
+    margin-top: -16px;
+    height: auto;
+    width: 28.5rem;
+}
+
+/* Main container */
+
+.main-container {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+/* Slider container */
+.slider-container {
+    position: relative;
+    height: 100%
+}
+
+/* dots carrusel */
+.dots-container {
+    display: flex;
+    justify-content: center;
+}
+
+.dot-container-item {
+    margin: 8px 3px;
+    cursor: pointer;
+    font-size: 12px;
+    text-align: center;
+}
+
+/* Arrows */
+.leftArrow {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-size: 50px;
+    font-weight: 700;
+    color: #fff;
+    z-index: 1;
+    cursor: pointer;
+    padding: 0.2rem 1rem;
+    border-radius: 0px 10px 10px 0px;
+    border: 1px sollid black;
+    background-color: #141414;
+}
+
+.rightArrow {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 0rem;
+    font-size: 50px;
+    font-weight: 700;
+    color: #fff;
+    z-index: 1;
+    cursor: pointer;
+    padding: 0.2rem 1rem;
+    border-radius: 10px 0px 0px 10px;
+    border: 1px sollid black;
+    background-color: #141414;
+}
+
+.container-images {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+div.active {
+    background: #ccc;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+
+.bannerImg{
+    padding-top: 5.3rem;
+    transition: 400ms all ease;
+}
+.bannerImg:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+
 /* section container */
 
 .sectionContainer {}
@@ -208,7 +309,7 @@ ul {
 
 .imgItem {
     width: 100%;
-    height: 150.250px;
+    height: auto;
 }
 
 
@@ -279,7 +380,7 @@ ul {
     bottom: 0;
     left: 0;
     color: #e5e5e5;
-    font-size: 50px;
+    font-size: 35px;
     text-shadow: 2px 2px 4px black;
 }
 

@@ -19,7 +19,7 @@ export const MapData = (props) => {
                 {data && data.slice(0, more).map((item) => {
                     return (
                         <Link className="movieItem" href={`/${type}/${item.id}`} key={item.id}>
-                            <img className="imgItem" src={item.backdrop_path ? `https://image.tmdb.org/t/p/w500/${item.backdrop_path}` : "https://th.bing.com/th/id/OIP.cYuUpmLFjc-wYNONzHsl-gAAAA?pid=ImgDet&rs=1"} alt={`backdrop of ${(item.title ? item.title : item.name)}`} />
+                            <img className="imgItem" src={item.backdrop_path ? `https://image.tmdb.org/t/p/w500/${item.backdrop_path}` : ""} alt={`backdrop of ${(item.title ? item.title : item.name)}`} />
                             <div className="movieInformation">
                                 <div className={`movieRate ${rating(item.vote_average)}`}>
                                     <p >{item.vote_average}</p>
