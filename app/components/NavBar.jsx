@@ -1,7 +1,9 @@
 "use client"
+import { useState } from "react"
+import React from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
-import { useState } from "react"
+
 const links = [
     { name: "Upcoming", link: "#upcoming" },
     { name: "Popular Series", link: "#populartvseries" },
@@ -14,7 +16,7 @@ const NavBar = () => {
 
     return (
         <nav>
-            <div style={{ display: "flex", alignItems: "center", gap: "2rem" }}>
+            <div className="navBar" >
                 <Link href="/"><h1>Cinema Centre</h1></Link>
                 <div className="header-search-col">
                     <div className="search-container">

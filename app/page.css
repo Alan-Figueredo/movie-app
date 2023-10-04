@@ -1,10 +1,13 @@
+html{
+    scroll-behavior: smooth;
+
+}
 :root {
     font-family: roboto;
 }
 
 body {
     background-color: #141414;
-    scroll-behavior: smooth;
     margin: 2rem 3rem;
 }
 
@@ -19,6 +22,9 @@ h1 {
 
 a {
     text-decoration: none;
+}
+.initialMargin{
+    margin-top: 100px;
 }
 
 /* Spinner */
@@ -62,6 +68,11 @@ nav {
     justify-content: space-between;
     align-items: center;
     gap: 3rem;
+}
+.navBar{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
 }
 
 .link {
@@ -252,11 +263,12 @@ div.active {
     border-radius: 50%;
 }
 
-.bannerImg{
+.bannerImg {
     padding-top: 5.3rem;
     transition: 400ms all ease;
 }
-.bannerImg:hover{
+
+.bannerImg:hover {
     transform: scale(1.05);
     cursor: pointer;
 }
@@ -402,4 +414,29 @@ div.active {
 
 .footerContainer a:hover {
     transform: scale(1.3);
+}
+
+
+@media screen and (max-width: 850px) {
+    nav{
+        width: auto;
+        display: block;
+    }
+    body {
+        margin: 0.5rem;
+    }
+
+    .movieContainer {
+        grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+    }
+    .footerContainer{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .movieItem:hover .movieInformation {
+        margin-top: -4rem;
+    }
+    .movieItem:hover *{
+        font-size: 16px;
+    }
 }

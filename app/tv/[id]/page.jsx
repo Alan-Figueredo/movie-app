@@ -1,3 +1,4 @@
+import React from "react";
 import "../../types.css"
 import { SimilarMovies } from "../../components/Similar";
 import { Credits } from "../../components/credits";
@@ -33,12 +34,12 @@ export default async function TvSeries({ params }) {
     const credits = await fetchCredits(id)
 
     return (
-        <div style={{ marginTop: "100px" }}>
-            <div style={{ display: "flex", flexWrap:"wrap" }}>
-                <InfoItem item={item && item} />
+        <div className="initialMargin">
+            <div className="containerBanner">
                 <div className="container-image">
                     <img className="imagenBanner" src={`https://image.tmdb.org/t/p/w500/${item?.backdrop_path}`} alt={`${item?.title} backdrop`} />
                 </div>
+                <InfoItem item={item && item} />
             </div>
             <div>
                 <h2>Similar</h2>

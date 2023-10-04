@@ -1,3 +1,4 @@
+import React from "react";
 export function InfoItem(props) {
     const { item } = props
     const rating = (rate) => {
@@ -9,7 +10,7 @@ export function InfoItem(props) {
             <div className="column">
                 <p>{item.release_date ? item?.release_date?.slice(0, 4) : item.first_air_date.slice(0, 4)}</p>
                 {item?.runtime ? <p>{item?.runtime} MIN</p> : <p>Seasons {item.seasons.length}</p>}
-                <div className={`movieRate ${rating(item?.vote_average)}`}>
+                <div data-testid="movieRate" className={`movieRate ${rating(item?.vote_average)}`}>
                     <p>{item?.vote_average.toString().slice(0, 1)}</p>
                 </div>
             </div>

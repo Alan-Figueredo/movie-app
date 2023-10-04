@@ -1,4 +1,5 @@
 import { SimilarMovies } from "../../components/Similar";
+import React from "react";
 import "../../types.css"
 
 const options = {
@@ -16,7 +17,7 @@ export default async function SearchItems({ params }) {
     const { id } = params
     const data = await fetchItem(id)
     return (
-        <section style={{marginTop:"100px"}}>
+        <section className="initialMargin">
             <h2>Search of {id.replace("%20", " ")}</h2>
             <SimilarMovies similar={data} />
         </section>

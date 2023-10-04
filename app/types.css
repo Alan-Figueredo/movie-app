@@ -5,6 +5,14 @@ p {
 
 }
 
+.containerBanner {
+    display: flex;
+    flex-direction: row-reverse;
+}
+.initialMargin{
+    margin-top: 100px;
+}
+
 .imagenBanner {
     position: relative;
     width: 100%;
@@ -96,10 +104,9 @@ p {
     flex-wrap: wrap;
     width: 100%;
     max-height: 600px;
-    /* ajusta la altura máxima según tus necesidades */
 }
 
-.credits-container p {
+.creditsContainer p {
     flex: 1;
     /* otros estilos de p */
 }
@@ -113,4 +120,32 @@ p {
     border: 1px solid white;
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.3);
+}
+
+
+
+@media screen and (max-width: 850px) {
+    .containerBanner {
+        display: flow-root;
+    }
+
+    .infoItem {
+        margin-bottom: 1rem;
+    }
+
+    .description {
+        position: relative;
+        width: auto;
+        margin-bottom: 1rem;
+    }
+
+    .creditsContainer {
+        width: 100%;
+        max-height: fit-content;
+    }
+
+    .similarContainer {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(35%, 1fr));
+    }
 }

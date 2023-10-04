@@ -1,3 +1,4 @@
+import React from "react";
 const Movie = ({ params }) => {
     const { id } = params
     return (

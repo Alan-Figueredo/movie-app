@@ -1,4 +1,6 @@
 "use client"
+import React from "react";
+
 import { useState } from "react";
 import Link from "next/link";
 
@@ -15,10 +17,10 @@ export const MapData = (props) => {
     }
     return (
         <>
-            <div className="movieContainer">
+            <div data-testid="movie-container" className="movieContainer">
                 {data && data.slice(0, more).map((item) => {
                     return (
-                        <Link className="movieItem" href={`/${type}/${item.id}`} key={item.id}>
+                        <Link data-testid="movie-item" className="movieItem" href={`/${type}/${item.id}`} key={item.id}>
                             <img className="imgItem" src={item.backdrop_path ? `https://image.tmdb.org/t/p/w500/${item.backdrop_path}` : ""} alt={`backdrop of ${(item.title ? item.title : item.name)}`} />
                             <div className="movieInformation">
                                 <div className={`movieRate ${rating(item.vote_average)}`}>

@@ -1,3 +1,4 @@
+import React from "react";
 import OnTheatre from "./components/OnTheatre";
 import PopularFilmList from "./components/PopularList";
 import PopularTVSeriesList from "./components/PopularTVSeriesList";
@@ -12,7 +13,7 @@ const HomePage = () => {
         }
     };
     return (
-        <div style={{marginTop:"100px"}}>
+        <div style={{ marginTop: "100px" }}>
             <OnTheatre options={options} />
             <UpComing options={options} />
             <PopularTVSeriesList options={options} />
